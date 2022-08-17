@@ -57,6 +57,9 @@ function setFeeDestinationAddress (address payable value) external onlyOwner{
     _feeDestinationAddress = value; 
 }
 
+function setWrapToken(address wrapToken) external {
+    _wrapToken = IERC20(wrapToken);
+}
 function getPrivateUniqueKey(address nftContractId, uint256 tokenId) private pure returns (bytes32){
     return keccak256(abi.encodePacked(nftContractId, tokenId));
 }
